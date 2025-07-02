@@ -1,0 +1,43 @@
+services:
+  mariadb:
+    image: mariadb:lts
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: gloop
+      MYSQL_USER: gloopuser
+      MYSQL_PASSWORD: glooppass
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - gloopnet
+
+  gloop:
+    image: clamy54/gloop:latest
+    container_name: gloop
+    ports:
+      - "8000:8000"
+    environment:
+      MYSQL_SERVER: mariadb
+      MYSQL_PORT: 3306
+      MYSQL_USER: gloopuser
+      MYSQL_PASSWORD: glooppass
+      MYSQL_DATABASE: gloop
+      SITE_NAME: "My Gloop Site"
+      CLIENT_TOKEN: "client-secret-token"
+      ADMIN_TOKEN: "admin-secret-token"
+      USE_TLS: "yes"
+    volumes:
+      - gloop_config:/gloop/config
+    depends_on:
+      - mariadb
+    networks:
+      - gloopnet
+
+volumes:
+  mariadb_data:
+  gloop_config:
+
+networks:
+  gloopnet:
+
