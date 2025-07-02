@@ -4,7 +4,7 @@ This repository contains a `docker-compose.yml` file to deploy an instance of **
 
 **Gloop** is a centralized software lifecycle management solution for Windows workstations. It leverages [Chocolatey](https://chocolatey.org/) to manage the installation, update, and removal of software packages across multiple endpoints.
 
-## 🐳 Overview
+## 1. Overview
 
 This Docker Compose setup defines two services:
 
@@ -13,7 +13,7 @@ This Docker Compose setup defines two services:
 
 Gloop Server listens on port `8000` and uses MariaDB as its backend database.
 
-## ▶️ Quick Start
+## 2. Quick Start
 
 ### 1. Create Persistent Folders (Optional)
 
