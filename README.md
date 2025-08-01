@@ -50,9 +50,10 @@ The `gloop` container supports the following environment variables:
 | MYSQL_PASSWORD   | Password for the MariaDB user                                               |
 | MYSQL_DATABASE   | Name of the MariaDB database (default: `gloop`)                            |
 | SITE_NAME        | Displayed name of your organization or Gloop site                          |
-| CLIENT_TOKEN     | Token used by Gloop clients for authentication                             |
-| ADMIN_TOKEN      | Token used to authenticate admin API requests                              |
+| CLIENT_TOKEN     | Token used by gloop-client  for authentication                             |
+| ADMIN_TOKEN      | Token used by gloop-manager for authentication                             |
 | USE_TLS          | Set to `"yes"` to enable self-signed TLS on server startup                 |
+| TZ               | Set the timezone value (ex : Europe/Paris )                                |
 
 ## 4. Volumes
 
